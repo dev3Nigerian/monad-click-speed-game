@@ -1,21 +1,8 @@
-import { useState, useEffect } from 'react'
-import { monadGamesID } from './services/MonadGamesID'
+import { useState } from 'react'
 import { GameComponent } from './components/GameComponent'
 import './App.css'
 
-interface User {
-  id: string
-  username: string
-  walletAddress: string
-}
-
 function App() {
-  const [user, setUser] = useState<User | null>({
-    id: 'demo-user',
-    username: 'Demo Player',
-    walletAddress: '0x1234567890123456789012345678901234567890'
-  })
-  const [isLoading, setIsLoading] = useState(false)
   const [score, setScore] = useState(0)
 
   const handleScoreUpdate = (newScore: number) => {
