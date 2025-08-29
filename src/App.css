@@ -199,6 +199,118 @@
   box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
 }
 
+/* Game results screen styles */
+.game-results {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 3rem;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  width: 90%;
+}
+
+.game-results h2 {
+  color: #fff;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.results-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 3rem;
+  gap: 2rem;
+}
+
+.score-display-result,
+.high-score-result {
+  text-align: center;
+}
+
+.score-display-result h3,
+.high-score-result h3 {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.final-score {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #4ECDC4;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.high-score-value {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #FFD700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.new-record {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FF6B6B;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-top: 1rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.results-actions {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.play-again-button,
+.main-menu-button {
+  background: linear-gradient(45deg, #4ECDC4, #44A08D);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(78, 205, 196, 0.4);
+  font-weight: bold;
+}
+
+.play-again-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(78, 205, 196, 0.6);
+}
+
+.main-menu-button {
+  background: linear-gradient(45deg, #FF6B6B, #FF8E53);
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+}
+
+.main-menu-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.6);
+}
 /* Full-screen game styles */
 .game-area-fullscreen {
   width: 100vw;
