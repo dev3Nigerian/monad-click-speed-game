@@ -66,6 +66,13 @@ function App() {
     setScore(0)
   }
 
+  const handleGameEnd = () => {
+    // When game ends, return to startup screen
+    setGameMode('startup')
+    setUser(null)
+    setScore(0)
+  }
+
   // Startup screen
   if (gameMode === 'startup') {
     return (
@@ -75,7 +82,7 @@ function App() {
           <p>Choose your game mode:</p>
 
           <div className="mode-selection">
-            <button
+            <button 
               className="mode-button auth-button"
               onClick={() => handleStartupChoice('auth')}
             >
@@ -86,7 +93,7 @@ function App() {
               </div>
             </button>
 
-            <button
+            <button 
               className="mode-button demo-button"
               onClick={() => handleStartupChoice('demo')}
             >
@@ -125,7 +132,7 @@ function App() {
           <p>Wallet: {user?.walletAddress.slice(0, 6)}...{user?.walletAddress.slice(-4)}</p>
         )}
         <p style={{ fontSize: '0.9rem', opacity: 0.8 }}>
-          {user?.id === 'demo-user'
+          {user?.id === 'demo-user' 
             ? 'This is a demo version. Scores are not saved to Monad Games ID.'
             : 'Your scores are automatically saved to Monad Games ID!'
           }
@@ -145,6 +152,7 @@ function App() {
       <GameComponent
         onScoreUpdate={handleScoreUpdate}
         currentScore={score}
+        onGameEnd={handleGameEnd}
       />
     </div>
   )

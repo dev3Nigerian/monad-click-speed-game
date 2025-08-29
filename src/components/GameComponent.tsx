@@ -3,9 +3,10 @@ import React, { useState, useEffect } from 'react'
 interface GameComponentProps {
   onScoreUpdate: (score: number) => void
   currentScore: number
+  onGameEnd?: () => void
 }
 
-export const GameComponent: React.FC<GameComponentProps> = ({ onScoreUpdate }) => {
+export const GameComponent: React.FC<GameComponentProps> = ({ onScoreUpdate, onGameEnd }) => {
   const [gameActive, setGameActive] = useState(false)
   const [timeLeft, setTimeLeft] = useState(30)
   const [clicks, setClicks] = useState(0)
@@ -40,6 +41,11 @@ export const GameComponent: React.FC<GameComponentProps> = ({ onScoreUpdate }) =
     
     if (finalScore > highScore) {
       setHighScore(finalScore)
+    }
+
+    // Call the onGameEnd callback to return to startup screen
+    if (onGameEnd) {
+      onGameEnd()
     }
   }
 
